@@ -21,6 +21,7 @@ spec:
   containers:
   - name: server
     image: study_server:latest 
+    command: ["python", "server.py"] 
     imagePullPolicy: Never
     ports:
     - containerPort: 5000
@@ -37,5 +38,6 @@ spec:
   - name: client
     image: study_client:latest 
     imagePullPolicy: Never
+    command: ["python", "client.py"] 
     ports:
     - containerPort: 5000
