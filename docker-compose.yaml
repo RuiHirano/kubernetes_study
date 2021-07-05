@@ -1,0 +1,12 @@
+version: '3'
+services:
+  server:
+    image: study_server:latest
+    command:
+      - python server.py
+  client:
+    image: study_client:latest
+    depends_on:
+      - server
+    command:
+      - python client.py
